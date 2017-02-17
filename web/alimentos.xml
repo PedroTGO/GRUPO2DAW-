@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<alimentos>
+	<alimento>
+		<nombre>fresa</nombre>
+		<energia>20</energia>
+		<proteina>20</proteina>
+		<hidratocarbono>20</hidratocarbono>
+		<fibra>20</fibra>
+		<grasatotal>20</grasatotal>
+	</alimento>
+</alimentos>
+
