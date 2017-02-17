@@ -24,18 +24,6 @@
          require __DIR__ . '/templates/mostrarAlimentos.php';
      }
 
-     public function wikiLista()
-     {
-         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
-                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
-
-         $params = array(
-             'alimentos' => $m->dameAlimentos(),
-         );
-
-         require __DIR__ . '/templates/wikiListaAlimentos.php';
-     }
-
      public function insertar()
      {
          $params = array(
@@ -95,7 +83,7 @@
          require __DIR__ . '/templates/buscarPorNombre.php';
      }
 
-      public function buscarPorEnergia()
+     public function buscarPorEnergia()
      {
          $params = array(
              'energia' => '',
@@ -113,11 +101,10 @@
          require __DIR__ . '/templates/buscarPorEnergia.php';
      }
 
-        public function buscarCombinado()
+     public function buscarPorGrasa()
      {
          $params = array(
-             'energia' => '',
-             'nombre' => '',
+             'grasa' => '',
              'resultado' => array(),
          );
 
@@ -125,12 +112,31 @@
                      Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
 
          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-             $params['energia'] = $_POST['energia'];
-             $params['nombre'] = $_POST['nombre'];
-             $params['resultado'] = $m->buscarAlimentosCombinado($_POST['energia'],$_POST['nombre']);
+             $params['grasa'] = $_POST['grasa'];
+             $params['resultado'] = $m->buscarAlimentosPorGrasa($_POST['grasa']);
          }
 
-         require __DIR__ . '/templates/buscarCombinado.php';
+         require __DIR__ . '/templates/buscarPorGrasa.php';
+     }
+
+     public function buscarCombi()
+     {
+         $params = array(
+             'grasa' => '',
+             'energia' => '',
+             'resultado' => array(),
+         );
+
+         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+             $params['grasa'] = $_POST['grasa'];
+             $params['energia'] = $_POST['energia'];
+             $params['resultado'] = $m->buscarAlimentosCombinado($_POST['grasa'],$_POST['energia']);
+         }
+
+         require __DIR__ . '/templates/buscarCombinada.php';
      }
 
      public function ver()
@@ -151,7 +157,19 @@
          require __DIR__ . '/templates/verAlimento.php';
      }
 
-    public function archivoxml()
+      public function verWiki()
+     {
+         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         $params = array(
+             'alimentos' => $m->dameAlimentos(),
+         );
+
+         require __DIR__ . '/templates/verWiki.php';
+     }
+
+     public function archivoxml()
      {
         if (!isset($_GET['id'])) {
              throw new Exception('Página no encontrada');
@@ -205,8 +223,8 @@
        require __DIR__ . '/templates/eliminarAlimento.php';
     }
 
+     
 
-
-    
  }
-?>
+
+ ?>
