@@ -1,0 +1,10 @@
+Partimos del proyecto terminado según la web de referencia, es decir la página de alimentos. Este proyecto se subió a git como el master.
+
+Una vez creado el máster se crearon tres ramas diferentes, una para cada uno de los participantes.
+
+Hicimos las modificaciones que se requerían para el proyecto como la wiki y las diferentes tipos de búsqueda. Al finalizar estas modificaciones cada uno subió a su rama los archivos que le correspondían.
+
+Una vez subidos los archivos a las ramas se efectuaron los pull request necesarios para subir todos los archivos al master.
+
+Cada vez que se hacía un pull request se hacía un merge para integrar los cambios en el master, y así hasta que se hicieron las tres ramas, acabando los tres con el proyecto completo en nuestra carpeta cuando se actualizó.
+
