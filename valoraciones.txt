@@ -1,0 +1,5 @@
+Al final hemos acabado usando la aplicación de windows para hacer la práctica ya que al hacerlo por consola nos dió varios problemas, cuando probamos con la aplicación y vimos que funcionaba bien no lo dudamos.
+
+Aunque no ha sido dificil de hacer, sí que ha tenido bastante dificultad el proceso de aprendizaje, por el cual hemos tenido que pasar para poder hacerlo.
+
+Hubo que realizar varias pruebas y borrar y volver a crear el repositorio hasta que dimos con la clave y de como funcionaba todo, pero una vez que hemos visto como funciona resulta fácil.
